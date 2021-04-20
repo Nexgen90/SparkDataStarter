@@ -1,4 +1,4 @@
-package ru.nexgen.SparkDataStarter;
+package ru.nexgen.starter;
 
 /**
  * Created by nikolay.mikutskiy

@@ -1,4 +1,4 @@
-package ru.nexgen.SparkDataStarter;
+package ru.nexgen.starter;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

@@ -1,5 +1,6 @@
-package ru.nexgen.SparkDataStarter;
+package ru.nexgen.starter;
 
+import lombok.Builder;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -13,6 +14,7 @@ import java.util.Map;
  * Created by nikolay.mikutskiy
  * Date: 19.04.2021
  */
+@Builder
 public class SparkInvocationHandler implements InvocationHandler {
     private Class<?> modelClass;
     private String pathToData;
