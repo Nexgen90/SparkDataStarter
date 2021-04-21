@@ -1,4 +1,4 @@
-package ru.nexgen.starter;
+package ru.nexgen.unsafe_starter;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;

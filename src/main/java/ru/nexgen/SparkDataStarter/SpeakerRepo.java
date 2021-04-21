@@ -1,6 +1,6 @@
 package ru.nexgen.SparkDataStarter;
 
-import ru.nexgen.starter.SparkRepository;
+import ru.nexgen.unsafe_starter.SparkRepository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.nexgen.starter;
+package ru.nexgen.unsafe_starter;
 
 import lombok.Builder;
 import org.apache.spark.sql.Dataset;
@@ -39,7 +39,7 @@ public class SparkInvocationHandler implements InvocationHandler {
 
         //3) Приводим к конечному результату
         Finalizer finalizer = finalizerMap.get(method);
-        Object retVal = finalizer.doAction(dataset);
+        Object retVal = finalizer.doAction(dataset, modelClass);
         return retVal;
     }
 }

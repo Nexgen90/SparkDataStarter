@@ -1,4 +1,4 @@
-package ru.nexgen.starter;
+package ru.nexgen.unsafe_starter;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -8,5 +8,5 @@ import org.apache.spark.sql.Row;
  * Date: 19.04.2021
  */
 public interface Finalizer {
-    Object doAction(Dataset<Row> dataset);
+    Object doAction(Dataset<Row> dataset, Class<?> model);
 }

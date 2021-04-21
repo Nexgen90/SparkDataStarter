@@ -1,4 +1,4 @@
-package ru.nexgen.starter;
+package ru.nexgen.unsafe_starter;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -9,7 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * Created by nikolay.mikutskiy
  * Date: 19.04.2021
  */
-public interface DataExtractor {
+public interface  DataExtractor {
     /**
      *
      * @param pathToData

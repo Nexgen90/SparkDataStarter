@@ -1,7 +1,11 @@
-package ru.nexgen.starter;
+package ru.nexgen.unsafe_starter;
 
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 
+import java.beans.Introspector;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -30,11 +34,15 @@ import java.util.stream.Collectors;
  *       '
  *   PathToSource
  */
+@Component
+@RequiredArgsConstructor
 public class SparkInvocationHandlerFactory {
-    private DataExtractorResolver resolver;
-    private Map<String, TransformationSpider> spiderMap;
-    private Map<String, Finalizer> finalizerMap;
-    private ConfigurableApplicationContext context;
+    private final DataExtractorResolver resolver;
+    private final Map<String, TransformationSpider> spiderMap;
+    private final Map<String, Finalizer> finalizerMap;
+
+    @Setter
+    private ConfigurableApplicationContext realContext;
 
     public SparkInvocationHandler create(Class<? extends SparkRepository> sparkRepoInterface) {
         Class<?> modelClass = getModelClass(sparkRepoInterface);
@@ -60,7 +68,7 @@ public class SparkInvocationHandlerFactory {
             transformationChain.put(method, transformations);
             String finalizerName = "collect";
             if (methodWords.size() == 1) {
-                finalizerName = methodWords.get(0);
+                finalizerName = Introspector.decapitalize(methodWords.get(0));
             }
             methodToFinalizer.put(method, finalizerMap.get(finalizerName));
         }
@@ -71,7 +79,7 @@ public class SparkInvocationHandlerFactory {
                 .dataExtractor(dataExtractor)
                 .transformationChain(transformationChain)
                 .finalizerMap(methodToFinalizer)
-                .context(context)
+                .context(realContext)
                 .build();
     }
 
