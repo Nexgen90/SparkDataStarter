@@ -55,7 +55,7 @@ public class SparkInvocationHandlerFactory {
                 if (!spiderName.isEmpty()) {
                     currentStrategy = spiderMap.get(spiderName);
                 }
-                transformations.add(currentStrategy.getTransformation(methods));
+                transformations.add(currentStrategy.getTransformation(methodWords, fieldNames));
             }
             transformationChain.put(method, transformations);
             String finalizerName = "collect";
