@@ -18,5 +18,5 @@ import ru.nexgen.unsafe_starter.Source;
 @Source("data/speakers.json")
 public class Speaker {
     private String name;
-    private int age;
+    private long age;
 }

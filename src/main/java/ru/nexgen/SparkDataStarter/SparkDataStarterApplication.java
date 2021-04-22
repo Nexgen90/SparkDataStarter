@@ -13,7 +13,8 @@ public class SparkDataStarterApplication {
         ConfigurableApplicationContext context = SpringApplication.run(SparkDataStarterApplication.class, args);
 
         SpeakerRepo speakerRepo = context.getBean(SpeakerRepo.class);
-        List<Speaker> byAgeBetween = speakerRepo.findByAgeBetween(20, 35);
+        List<Speaker> result = speakerRepo.findByAgeBetween(20, 35);
+        System.out.println(result);
 
     }
 
