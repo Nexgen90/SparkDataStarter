@@ -12,6 +12,12 @@ public class SparkDataStarterApplication {
 
         SpeakerRepo speakerRepo = context.getBean(SpeakerRepo.class);
         speakerRepo.findByAgeBetween(20, 35).forEach(System.out::println);
+
+        CriminalRepo criminalRepo = context.getBean(CriminalRepo.class);
+        criminalRepo.findByNumberGreaterThanOrderByNumber(14).forEach(System.out::println);
+
+        long byNameContains = criminalRepo.findByNameContainsCount("ova");
+        System.out.println("count: " + byNameContains);
     }
 
 }
