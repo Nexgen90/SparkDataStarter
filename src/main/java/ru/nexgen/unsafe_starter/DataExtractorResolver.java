@@ -2,6 +2,7 @@ package ru.nexgen.unsafe_starter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.nexgen.unsafe_starter.dataextractor.DataExtractor;
 
 import java.util.Map;
 

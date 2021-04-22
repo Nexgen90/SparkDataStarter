@@ -1,4 +1,4 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.dataextractor;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -8,15 +8,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * Created by nikolay.mikutskiy
- * Date: 21.04.2021
+ * Date: 19.04.2021
  */
-@Component("csv")
-public class CsvDataExtractor implements DataExtractor {
+@Component("json")
+public class JsonDataExtractor implements DataExtractor {
     @Override
     public Dataset<Row> load(String pathToData, ConfigurableApplicationContext context) {
-        return context.getBean(SparkSession.class).read()
-                .option("header", true)
-                .option("inferSchema", true)
-                .csv(pathToData);
+        return context.getBean(SparkSession.class).read().json(pathToData);
     }
 }

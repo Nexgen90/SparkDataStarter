@@ -4,6 +4,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+import ru.nexgen.unsafe_starter.dataextractor.DataExtractor;
+import ru.nexgen.unsafe_starter.dataextractor.Source;
+import ru.nexgen.unsafe_starter.strategy.TransformationSpider;
+import ru.nexgen.unsafe_starter.strategy.finalizer.Finalizer;
+import ru.nexgen.unsafe_starter.strategy.transformation.SparkTransformation;
+import ru.nexgen.unsafe_starter.utils.WordsMatcher;
 import scala.Tuple2;
 
 import java.beans.Introspector;

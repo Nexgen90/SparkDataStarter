@@ -4,6 +4,10 @@ import lombok.Builder;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.context.ConfigurableApplicationContext;
+import ru.nexgen.unsafe_starter.dataextractor.DataExtractor;
+import ru.nexgen.unsafe_starter.strategy.finalizer.Finalizer;
+import ru.nexgen.unsafe_starter.strategy.transformation.SparkTransformation;
+import ru.nexgen.unsafe_starter.utils.OrderedBag;
 import scala.Tuple2;
 
 import java.lang.reflect.InvocationHandler;

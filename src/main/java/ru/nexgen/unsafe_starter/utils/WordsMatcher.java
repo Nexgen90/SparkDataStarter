@@ -1,4 +1,4 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.utils;
 
 import java.beans.Introspector;
 import java.util.ArrayList;

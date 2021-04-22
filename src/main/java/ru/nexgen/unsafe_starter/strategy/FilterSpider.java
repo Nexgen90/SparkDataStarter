@@ -1,7 +1,10 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.strategy;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.nexgen.unsafe_starter.strategy.transformation.FilterTransformation;
+import ru.nexgen.unsafe_starter.strategy.transformation.SparkTransformation;
+import ru.nexgen.unsafe_starter.utils.WordsMatcher;
 import scala.Tuple2;
 
 import java.util.List;

@@ -1,5 +1,6 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.strategy;
 
+import ru.nexgen.unsafe_starter.strategy.transformation.SparkTransformation;
 import scala.Tuple2;
 
 import java.util.List;

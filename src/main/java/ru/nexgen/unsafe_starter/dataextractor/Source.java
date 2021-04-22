@@ -1,4 +1,4 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.dataextractor;
 
 import java.lang.annotation.Retention;
 

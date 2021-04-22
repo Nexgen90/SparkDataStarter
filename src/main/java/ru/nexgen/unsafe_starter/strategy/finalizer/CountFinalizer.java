@@ -1,8 +1,9 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.strategy.finalizer;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.springframework.stereotype.Component;
+import ru.nexgen.unsafe_starter.strategy.finalizer.Finalizer;
 
 /**
  * Created by nikolay.mikutskiy

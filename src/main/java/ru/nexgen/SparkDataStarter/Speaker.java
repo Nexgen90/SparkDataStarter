@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.nexgen.unsafe_starter.Source;
+import ru.nexgen.unsafe_starter.dataextractor.Source;
 
 /**
  * Created by nikolay.mikutskiy

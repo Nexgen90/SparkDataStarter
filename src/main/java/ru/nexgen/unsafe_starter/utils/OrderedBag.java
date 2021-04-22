@@ -1,4 +1,4 @@
-package ru.nexgen.unsafe_starter;
+package ru.nexgen.unsafe_starter.utils;
 
 import java.util.ArrayList;
 import java.util.List;
