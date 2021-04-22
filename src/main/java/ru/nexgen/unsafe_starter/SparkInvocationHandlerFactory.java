@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+import scala.Tuple2;
 
 import java.beans.Introspector;
 import java.lang.reflect.Field;
@@ -49,7 +50,7 @@ public class SparkInvocationHandlerFactory {
         String pathToData = modelClass.getAnnotation(Source.class).value();
         Set<String> fieldNames = getFieldNames(modelClass);
         DataExtractor dataExtractor = resolver.resolve(pathToData);
-        Map<Method, List<SparkTransformation>> transformationChain = new HashMap<>();
+        Map<Method, List<Tuple2<SparkTransformation, List<String>>>> transformationChain = new HashMap<>();
         Map<Method, Finalizer> methodToFinalizer = new HashMap<>();
 
         Method[] methods = sparkRepoInterface.getMethods();
@@ -57,7 +58,7 @@ public class SparkInvocationHandlerFactory {
             TransformationSpider currentStrategy = null;
             String name = method.getName();
             List<String> methodWords = WordsMatcher.toWordsByJavaConvention(name);
-            List<SparkTransformation> transformations = new ArrayList<>();
+            List<Tuple2<SparkTransformation, List<String>>> transformations = new ArrayList<>();
             while (methodWords.size() > 1) {
                 String spiderName = WordsMatcher.findAndRemoveMatchingPiecesIfExists(spiderMap.keySet(), methodWords);
                 if (!spiderName.isEmpty()) {
