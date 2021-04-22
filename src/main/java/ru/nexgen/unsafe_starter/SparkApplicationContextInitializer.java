@@ -24,6 +24,8 @@ public class SparkApplicationContextInitializer implements ApplicationContextIni
         //имя пакета для сканировани в стартере не должно совпадать с именем пакета, где будут приложения. Поэтому сделан префикс unsafe
         AnnotationConfigApplicationContext tempContext = new AnnotationConfigApplicationContext("ru.nexgen.unsafe_starter");
         SparkInvocationHandlerFactory factory = tempContext.getBean(SparkInvocationHandlerFactory.class);
+        DataExtractorResolver extractorResolver = tempContext.getBean(DataExtractorResolver.class);
+        context.getBeanFactory().registerSingleton("sparkDataResolver", extractorResolver);
         tempContext.close();
 
 
