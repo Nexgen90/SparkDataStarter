@@ -17,6 +17,7 @@ import ru.nexgen.unsafe_starter.dataextractor.Source;
 @NoArgsConstructor
 @Source("data/speakers.json")
 public class Speaker {
+    private long id;
     private String name;
     private long age;
 }

@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SparkDataStarterApplication {
 
@@ -18,6 +20,10 @@ public class SparkDataStarterApplication {
 
         long byNameContains = criminalRepo.findByNameContainsCount("ova");
         System.out.println("count: " + byNameContains);
+
+        List<Criminal> criminals = criminalRepo.findByNameContains("ova");
+        criminals.get(0).getOrders().forEach(System.out::println);
+
     }
 
 }

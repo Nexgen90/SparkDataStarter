@@ -15,7 +15,7 @@ public class DataExtractorResolver {
     @Autowired
     private Map<String, DataExtractor> extractorMap;
 
-    DataExtractor resolve(String pathToData) {
+    public DataExtractor resolve(String pathToData) {
         String fileExtension = pathToData.split("\\.")[1];
         return extractorMap.get(fileExtension);
     }

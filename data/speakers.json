@@ -1,6 +1,6 @@
-{"name": "Baruch","age": 43}
-{"name": "Jeka","age": 42}
-{"name": "Gena","age": 31}
-{"name": "Kirill","age": 29}
-{"name": "Nikita","age": 41}
-{"name": "Alexey","age": 38}
+{"id": 1, "name": "Baruch","age": 43}
+{"id": 2, "name": "Jeka","age": 42}
+{"id": 3, "name": "Gena","age": 31}
+{"id": 4, "name": "Kirill","age": 29}
+{"id": 5, "name": "Nikita","age": 41}
+{"id": 6, "name": "Alexey","age": 38}

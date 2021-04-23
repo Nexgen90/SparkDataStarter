@@ -27,6 +27,7 @@ public class SparkInvocationHandler implements InvocationHandler {
     private Map<Method, List<Tuple2<SparkTransformation, List<String>>>> transformationChain;
     private Map<Method, Finalizer> finalizerMap;
     private ConfigurableApplicationContext context;
+    private PostFinalizer postFinalizer;
 
     /**
      * @param method метод, котоый вызвали выше
@@ -47,6 +48,8 @@ public class SparkInvocationHandler implements InvocationHandler {
         //3) Приводим к конечному результату
         Finalizer finalizer = finalizerMap.get(method);
         Object retVal = finalizer.doAction(dataset, modelClass);
-        return retVal;
+
+        //4) Inject lazy collections if it needed
+        return postFinalizer.postFinalizer(retVal);
     }
 }

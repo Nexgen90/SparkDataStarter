@@ -12,4 +12,6 @@ public interface CriminalRepo extends SparkRepository<Criminal> {
     List<Criminal> findByNumberGreaterThanOrderByNumber(int min);
 
     long findByNameContainsCount(String partOfName);
+
+    List<Criminal> findByNameContains(String part);
 }

@@ -3,10 +3,7 @@ package ru.nexgen.SparkDataStarter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.nexgen.unsafe_starter.ForeignKey;
 import ru.nexgen.unsafe_starter.dataextractor.Source;
-
-import java.util.List;
 
 /**
  * Created by nikolay.mikutskiy
@@ -15,12 +12,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Source("data/criminals.csv")
-public class Criminal {
-    private long id;
+@Source("data/orders.csv")
+public class Order {
     private String name;
-    private int number;
-
-    @ForeignKey("criminalId")
-    private List<Order> orders;
+    private String desc;
+    private int price;
+    private long criminalId;
 }
